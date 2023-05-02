@@ -1,14 +1,18 @@
 package search;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
 
-        List<String> lines = dataEntry(scanner);
+        //List<String> lines = dataEntry(scanner);
+        List<String> lines = Files.readAllLines(new File(args[1]).toPath());
 
         int menuSelection;
         do {
